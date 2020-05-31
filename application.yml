@@ -1,1 +1,30 @@
 
+# Connexion à la base de données
+###Pour MariaDb uniquement : ne fonctionne pas pour MySql
+spring:
+  datasource:
+    url: jdbc:mariadb://localhost:3306/sample2?createDatabaseIfNotExist=true
+    username: coucou
+    password: coucou
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa:
+# Hibernate ddl auto (create, create-drop, update): with "update" the database
+# schema will be automatically updated accordingly to java entities found in
+# the project
+    hibernate:
+      ddl-auto: update #create update create-drop
+#   generate-ddl: true
+
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+
+
+#Hibernate Configuration
+# Show or not log for each sql query
+    show-sql: true
+# Allows Hibernate to generate SQL optimized for a particular DBMS
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.MariaDB103Dialect
+
